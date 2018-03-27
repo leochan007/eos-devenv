@@ -1,10 +1,15 @@
 version: "3"
 
 services:
+  builder:
+    build:
+      context: builder
+    image: eosio/builder
+
   nodeos:
     build:
       context: .
-    image: eosio/eos
+    image: eosio/eos_3
     command: /opt/eosio/bin/start_nodeos.sh
     ports:
       - 8888:8888
@@ -14,9 +19,11 @@ services:
     volumes:
       - ./data-dir/nodeos:/opt/eos/bin/data-dir
       - ./config.ini:/opt/eos/bin/data-dir/config.ini
+    depends_on:
+      - builder
 
-  walletd:
-    image: eosio/eos
+  walletd_3:
+    image: eosio/eos_3
     command: /opt/eosio/bin/eosiowd
     links:
       - nodeos

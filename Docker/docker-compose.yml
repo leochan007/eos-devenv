@@ -18,8 +18,12 @@ services:
   walletd:
     image: eosio/eos
     command: /opt/eos/bin/eos-walletd
+    ports:
+      - 18888:8888
+      - 18889:8889
     links:
       - eosd
     volumes:
       - ./data-dir/walletd:/opt/eos/bin/data-dir
+      - ./config.ini:/opt/eos/bin/data-dir/config.ini
       
