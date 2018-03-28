@@ -1,0 +1,25 @@
+PW5JCQW3MY7g9RXoJp9P5gSwCWiPDEZp499DhxvPBNHrdW7t1wiku
+
+./eosc create key
+Private key: 5K1YHopCifbNqta9imyU3hHzPrpqVHCKaZxbAxJvVtMngJdT2WW
+Public key: EOS8Y6qYEsNQeJxBbDZqPKivqyCWPisDzDjrj7vaCQrmMsZGxxpYg
+
+./eosc create key
+Private key: 5JWGKQKRcWFHtY6uRKmtwKjuJoc4qER2K77v1LLZVLLuFCrZQaC
+Public key: EOS5RFUFHchkKaXeT9Lpg8PcnzK3sk2a66ZtKfqktAqd9AzckBZVZ
+
+./eosc create account inita exchange EOS8Y6qYEsNQeJxBbDZqPKivqyCWPisDzDjrj7vaCQrmMsZGxxpYg EOS5RFUFHchkKaXeT9Lpg8PcnzK3sk2a66ZtKfqktAqd9AzckBZVZ
+
+./eosc create account inita currency EOS8Y6qYEsNQeJxBbDZqPKivqyCWPisDzDjrj7vaCQrmMsZGxxpYg EOS5RFUFHchkKaXeT9Lpg8PcnzK3sk2a66ZtKfqktAqd9AzckBZVZ
+
+./eosc wallet import 5JWGKQKRcWFHtY6uRKmtwKjuJoc4qER2K77v1LLZVLLuFCrZQaC
+
+./eosc set contract exchange contracts/exchange/exchange.wast contracts/exchange/exchange.abi
+
+./eosc set contract exchange contracts/currency/currency.wast contracts/currency/currency.abi
+
+./eosc set contract currency contracts/currency/currency.wast contracts/currency/currency.abi
+
+./eosc get code exchange
+
+./eosc get code currency

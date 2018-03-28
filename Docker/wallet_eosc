@@ -1,0 +1,4 @@
+#!/bin/bash
+
+eosc='docker-compose exec walletd /opt/eos/bin/eosc -H eosd'
+$eosc $@

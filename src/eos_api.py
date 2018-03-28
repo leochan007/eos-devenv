@@ -41,12 +41,12 @@ class ChainAPI(BaseAPI):
 
     def abi_json_to_bin(self, code, action, args = {}):
         payload = { 'code': code,  'action': action,  'args': args }
-        r = requests.post(self.base_url + 'v1/chain/get_table_rows', data = json.dumps(payload), headers = self.headers)
+        r = requests.post(self.base_url + 'v1/chain/abi_json_to_bin', data = json.dumps(payload), headers = self.headers)
         return r.json()
 
 class WalletAPI(BaseAPI):
 
-    def __init__(self, base_url = 'http://127.0.0.1:18888/'):
+    def __init__(self, base_url = 'http://127.0.0.1:8888/'):
         super(WalletAPI, self).__init__(base_url)
 
     def wallet_create(self):
